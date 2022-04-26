@@ -15,7 +15,7 @@ module.exports = {
       const { titulo, data } = req.body
       const task = new Task({titulo, data, estaCompleta: false })
       await task.create()
-      res.status(201).json()
+      res.status(201).json({ status: "ok", message: "Tarefa criada com sucesso!" })
     } catch (err) {
       next(err)
     }
